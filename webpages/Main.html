@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- AOS -->
+    <link rel="stylesheet" href="../lib/css/aos.css" />
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="../styles/main.css">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Press+Start+2P&family=Russo+One&family=Secular+One&display=swap" rel="stylesheet">
+
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- FONT AWESOME -->
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- NAV BAR -->
+        <div class="nav-bar" id="nav">
+            <div class="title-container">
+                <div class="title" id="title">KAMAZON</div>
+                <div class="title-underline" id="title-underline"></div>
+            </div>
+        </div>
+
+        <div class="greetings">
+            <div>WELCOME TO</div> 
+        </div>
+        <!-- BANNER -->
+        <div class="video-banner">
+            <section class="banner">
+                <!-- VIDEO FILTER -->
+                <div class="vid-filter"></div>
+                <div class="character-container">
+                    <!-- CHARACTER IMAGE -->
+                    <div class="character"></div>
+                </div>                
+            </section>
+
+            <div class="knight-princess"></div>
+            <div class="social-links">
+                <a href="#" class="soc-btn fa fa-twitter"></a>
+                <a href="#" class="soc-btn fa fa-facebook"></a>
+                <i class="soc-btn fa fab fa-discord"></i>
+                <a href="#" class="soc-btn fa fa-reddit"></a>  
+            </div>
+            <!-- VIDEO -->
+            <div class="video-foreground" style="height: 100%;">
+                <video id="errorVid" autoplay muted loop width="100%">
+                    <source src="../video/WebsiteBackground.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <div class="long">tttt</div>
+
+
+
+    </div>
+</body>
+
+<!-- RELLAX JS -->
+<script src="/lib/js/rellax.min.js"></script>
+<script src="/lib/js/rellax.js"></script>
+<script>
+    /*
+    var logo = new Rellax('.iac-logo');
+    var title = new Rellax('.title-container');
+    var nothing = new Rellax('.student-works');
+    */
+</script>
+
+<!-- AOS -->
+<script src="/lib/js/aos.js"></script>
+<script>
+    AOS.init({
+  // Global settings:
+  disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+  startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+  initClassName: 'aos-init', // class applied after initialization
+  animatedClassName: 'aos-animate', // class applied on animation
+  useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+  disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+  debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+  throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+  
+
+  // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+  offset: 120, // offset (in px) from the original trigger point
+  delay: 0, // values from 0 to 3000, with step 50ms
+  duration: 400, // values from 0 to 3000, with step 50ms
+  easing: 'ease', // default easing for AOS animations
+  once: false, // whether animation should happen only once - while scrolling down
+  mirror: false, // whether elements should animate out while scrolling past them
+  anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+});
+</script>
+
+<!-- CHANGE NAV BAR ON SCROLL -->
+<script>
+    $(document).ready(function () {
+
+        $(window).scroll(function () {
+            let scrollval = $(window).scrollTop();
+            console.log(scrollval);
+            let navbar = document.getElementById('nav');
+            let title = document.getElementById('title');
+            let titleUnd = document.getElementById('title-underline');
+            
+            if (scrollval >= 85) {
+                title.style.fontSize = '3vw';
+                titleUnd.style.width = '7.5vw';
+                titleUnd.style.height = '0.2vw';
+                navbar.style.position = 'fixed';
+                navbar.style.top = '0';
+            } else {
+                title.style.fontSize = '6vw';
+                navbar.style.position = 'absolute';
+                titleUnd.style.width = '15vw';
+                titleUnd.style.height = '0.35vw';
+                navbar.style.top = '';
+            }
+        });
+    });
+</script>
+
+</html>

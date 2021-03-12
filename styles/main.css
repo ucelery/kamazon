@@ -1,0 +1,140 @@
+body {
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.nav-bar {
+    height: 70px;
+    width: 100%;
+    position: absolute;
+    top: 5vw;
+    z-index: 999;
+}
+
+.greetings {
+    position: absolute;
+    top: 2vw;
+    width: 100%;
+    z-index: 999;
+    color: whitesmoke;
+    font-family: 'Fredoka One', cursive;
+    font-size: 3vw;
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    font-family: 'Fredoka One', cursive;
+    color: whitesmoke;
+    align-self: center;
+    font-size: 6vw;
+    transition: 0.1s;
+}
+
+.title-underline {
+    position: absolute;
+    background-color: #e99b2d;
+    height: 0.35vw;
+    width: 15vw;
+    align-self: flex-end;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+}
+
+.vid-filter {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.video-banner {
+    position: relative;
+    height: 30vw;
+    overflow: hidden;
+}
+
+video {
+    pointer-events: none;
+}
+
+.social-links {
+    position: absolute;
+    bottom: 0.4vw;
+    left: 0.5vw;
+    z-index: 999;
+}
+
+.fa.soc-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    height: 2.8vw;
+    width: 2.8vw;
+    font-size: 1.4vw;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-reddit {
+    background: #ff5700;
+    color: white;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.knight-princess {
+    background-image: url("../images/img_intro.png");
+    background-size: contain;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 9vw;
+    align-self: flex-end;
+    position: absolute;
+    bottom: 0;
+}
+
+.character {
+    background-image: url("");
+}
+
+.long {
+    height: 1000px;
+}
+
+/* SCROLL BAR */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #383f45;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #bbc6ce;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #99a3ac;
+}
