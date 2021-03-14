@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- SWIPER STYLES -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- SHOP STYLES -->
+    <link rel="stylesheet" href="/styles/shop.css" />
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Press+Start+2P&family=Russo+One&family=Secular+One&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .swiper-container {
+            background-image: url('/images/background2.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            width: 300px;
+            height: 300px;
+            background-image: url('/images/container-base.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+    </head>
+
+<body>
+    <!-- PRICE TOOLTIP -->
+    <div class="price-tooltip" id="price-tooltip"></div>
+
+    <!-- ADD TO CART POP UP -->
+    <div class="add-to-cart-pop-up">
+
+    </div>
+
+    <div class="fixed-gradient"><!-- LEAVE EMPTY --></div>
+    <div class="wrapper">
+        <!-- NAV BAR -->
+        <div class="nav-bar newNav" id="nav">
+            <div class="title-container">
+                <div class="title newTitle" id="title">KAMAZON</div>
+                <div class="title-underline newUnder" id="title-underline"></div>
+            </div>
+        </div>
+        <div class="shop-banner">
+
+        </div>
+
+        <!-- COSTUMES -->
+        <div class="costume-wrapper">
+            <div class="costume-banner">
+                COSUMES!
+            </div>
+
+            <div class="swiper-container">
+                <div class="gradient-left"></div>
+                <div class="gradient-right"></div>
+                <div class="swiper-wrapper" id="costume-slides">
+                    <!-- EMPTY -->
+                </div>
+            </div>
+        </div>
+
+        <!-- SPECIALS -->
+        <div class="special-wrapper">
+            <div class="special-banner">
+                SPECIALS
+            </div>
+        </div>
+
+        <!-- WEEKLY BANNERS -->
+        <div class="weekly-wrapper">
+            <div class="weekly-banner">
+                WEEKLY DEALS
+            </div>
+        </div>
+    </div>
+</body>
+<!-- GENERATE SLIDES -->
+<script src="/js/generateSlides.js"></script>
+
+<!-- COSTUMES JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    // COSTUMES
+    var swiper = new Swiper('.swiper-container', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        loop: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+            rotate: 40,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: false,
+        },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        }
+    });
+</script>
+</html>
