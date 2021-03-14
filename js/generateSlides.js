@@ -124,7 +124,13 @@ models.forEach((item, index) => {
     costumeModel.setAttribute("data-model-id", `${item.content}`)
     costumeModel.addEventListener("mouseover", function() {
         let tooltip = document.getElementById('price-tooltip');
-        tooltip.innerHTML = `<i class="fas fa-diamond"></i> ${item.price}`;
+        tooltip.innerHTML = `<img src="/images/gem.png" alt=""> ${item.price}`;
+        tooltip.style.opacity = 1;
+    });
+
+    costumeModel.addEventListener("mouseout", function() {
+        let tooltip = document.getElementById('price-tooltip');
+        tooltip.style.opacity = 0;
     });
 
     slide.appendChild(header);
@@ -144,13 +150,13 @@ function addToCart(selectedItem) {
     let findItem = models.find(item => item.content === selectedItem);
 }
 
-let divWidth = document.getElementById('price-tooltip');
+let price_tooltip = document.getElementById('price-tooltip');
 // SHOW PRICE ON HOVER
-$(document).on("click mousemove", "body", function (e) {
+$(document).on("click mousemove mousedown", "body", function (e) {
     let x = e.clientX;
     let y = e.clientY;
-    let newposX = x - divWidth.offsetWidth / 2;
-    let newposY = y - 60; 
+    let newposX = x - price_tooltip.offsetWidth / 2;
+    let newposY = y - price_tooltip.offsetHeight - 20; 
     $(".price-tooltip").css("transform","translate3d("+newposX+"px,"+newposY+"px,0px)");
 });
 

@@ -24,7 +24,7 @@
     <title>Document</title>
 
     <style>
-        .swiper-container {
+        .costume-swiper-container {
             background-image: url('/images/background2.png');
             background-repeat: no-repeat;
             background-size: cover;
@@ -32,8 +32,8 @@
             padding-top: 50px;
             padding-bottom: 50px;
         }
-
-        .swiper-slide {
+    
+        .costume-swiper-container .swiper-slide {
             width: 300px;
             height: 300px;
             background-image: url('/images/container-base.png');
@@ -41,12 +41,79 @@
             background-repeat: no-repeat;
             background-position: center;
         }
+    
+        .specials-swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+    
+        .specials-swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+    
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .weekly-swiper-container {
+            padding: 50px;
+            background-image: url('/images/background3.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        .weekly-swiper-container .banner-video {
+            border-radius: 50px;
+            overflow: hidden;
+            height: auto;
+            width: 80vw;
+            margin: auto;
+        }
+
+        .weekly-swiper-container video {
+            pointer-events: none;
+            height: 460px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .banner-header {
+            background-image: url("/images/support_cutin.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right;
+            position: absolute;
+            font-size: 7vw;
+            font-family: 'Fredoka One', cursive;   
+            color: white; 
+            right: 0;
+            bottom: 0;
+            padding: 40px 0px;
+            transform: translate(50px, 20px);
+            -webkit-text-stroke: 4px rgba(0, 0, 0, 0.6);
+        }
     </style>
     </head>
 
 <body>
     <!-- PRICE TOOLTIP -->
-    <div class="price-tooltip" id="price-tooltip"></div>
+    <div class="price-tooltip" id="price-tooltip">
+        <img src="/images/gem.png" alt="">
+    </div>
 
     <!-- ADD TO CART POP UP -->
     <div class="add-to-cart-pop-up">
@@ -72,7 +139,8 @@
                 COSUMES!
             </div>
 
-            <div class="swiper-container">
+            <!-- SLIDESHOW -->
+            <div class="costume-swiper-container">
                 <div class="gradient-left"></div>
                 <div class="gradient-right"></div>
                 <div class="swiper-wrapper" id="costume-slides">
@@ -81,21 +149,44 @@
             </div>
         </div>
 
-        <!-- SPECIALS -->
-        <div class="special-wrapper">
-            <div class="special-banner">
-                SPECIALS
-            </div>
-        </div>
 
         <!-- WEEKLY BANNERS -->
         <div class="weekly-wrapper">
             <div class="weekly-banner">
-                WEEKLY DEALS
+                WEEKLY BANNERS
+            </div>
+
+            <!-- SLIDESHOW -->
+            <div class="weekly-swiper-container">
+                <div class="gradient-left"></div>
+                <div class="gradient-right"></div>
+                <div class="swiper-wrapper" id="costume-slides">
+                    <div class="swiper-slide">
+                        <div class="banner-header">
+                            EXORCIST MIYA
+                        </div>
+                        <div class="banner-video">
+                            <video autoplay muted loop>
+                                <source src="https://cdn.discordapp.com/attachments/742369003002921031/820690485991178331/Miya.mp4" type="video/mp4">
+                            </video>
+                        </div>   
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner-header">
+                            ADMIRAL MARINA
+                        </div>
+                        <div class="banner-video">
+                            <video autoplay muted loop>
+                                <source src="https://cdn.discordapp.com/attachments/742369003002921031/820690657332428810/marina-idoleva.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </body>
+
 <!-- GENERATE SLIDES -->
 <script src="/js/generateSlides.js"></script>
 
@@ -103,7 +194,7 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
     // COSTUMES
-    var swiper = new Swiper('.swiper-container', {
+    var swiper = new Swiper('.costume-swiper-container', {
         effect: 'coverflow',
         grabCursor: true,
         centeredSlides: true,
@@ -116,10 +207,16 @@
             modifier: 1,
             slideShadows: false,
         },
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        }
+    });
+
+    // WEEKLY
+    var swiper2 = new Swiper('.weekly-swiper-container', {
+        spaceBetween: 100,
+    });
+
+    // SPECIALS
+    var swiper3 = new Swiper('.specials-swiper-container', {
+        spaceBetween: 100,
     });
 </script>
 </html>
