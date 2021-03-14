@@ -58,6 +58,7 @@ body {
 
 .newTitle {
     font-size: 50px !important;
+    z-index: 999999 !important;
 }
 
 .newUnder {
@@ -105,7 +106,15 @@ body {
 
 /* CART
 ===================== */
+.cart-wrapper {
+    position: fixed;
+    right: 0; top: 0; bottom: 0;
+    width: 300px;
+    background-color: #ffd017;
+    z-index: 999991;
 
+    display: none;
+}
 
 
 /* SHOP BANNER
@@ -219,6 +228,20 @@ COSTUMES
     width: 100%;
     margin: auto;
     z-index: -1;
+}
+
+/* FOOTER
+===================== */
+
+footer {
+    height: 50px;
+    color: white;
+    background-image: linear-gradient(to top, rgb(0,0,0), rgba(0, 0, 0, 0.0));
+    position: absolute;
+    right: 0; left: 0; bottom: 0;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 0 10px;
 }
 
 /* SCROLL BAR */

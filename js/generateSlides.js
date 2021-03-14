@@ -152,9 +152,22 @@ function addToCart(selectedItem) {
 
 let price_tooltip = document.getElementById('price-tooltip');
 // SHOW PRICE ON HOVER
-$(document).on("click mousemove mousedown", "body", function (e) {
-    let x = e.clientX;
-    let y = e.clientY;
+$(document).on("click mousemove mousedown", "body", function (event) {
+    if (event.pageX == null && event.clientX != null) {
+        eventDoc = (event.target && event.target.ownerDocument) || document;
+        doc = eventDoc.documentElement;
+        body = eventDoc.body;
+
+        event.pageX = event.clientX +
+          (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
+          (doc && doc.clientLeft || body && body.clientLeft || 0);
+        event.pageY = event.clientY +
+          (doc && doc.scrollTop  || body && body.scrollTop  || 0) -
+          (doc && doc.clientTop  || body && body.clientTop  || 0 );
+    }
+    let x = event.pageX;
+    let y = event.pageY;
+    
     let newposX = x - price_tooltip.offsetWidth / 2;
     let newposY = y - price_tooltip.offsetHeight - 20; 
     $(".price-tooltip").css("transform","translate3d("+newposX+"px,"+newposY+"px,0px)");
