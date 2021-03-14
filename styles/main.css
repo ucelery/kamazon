@@ -1,3 +1,7 @@
+html {
+    overflow-x: hidden;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -97,6 +101,9 @@ body {
     height: 30vw;
     min-height: 150px;
     overflow: hidden;
+    box-shadow: black;
+    box-shadow: 5px 5px 20px 5px #aaaaaa;
+    margin-bottom: 50px;
 }
 
 .video-foreground video {
@@ -159,6 +166,59 @@ body {
 
 .character {
     background-image: url("");
+}
+
+/* ABOUT
+================================ */
+
+.about-wrapper {
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+    font-size: 50px;    
+    color: black;    
+}
+
+.about-title {
+    width: 100%;
+}
+
+.about-wrapper .content {
+    padding: 30px 10vw;
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+/* BUTTONS
+================================ */
+
+.buttons-wrapper {
+    width: 100vw;
+    display: flex;
+    margin-bottom: 100px;
+}
+
+.btn-shop img {
+    position: absolute;
+    left: -3vw;
+    transform: translateY(-5vw);
+    width: 12vw;
+    height: 10vw;
+}
+
+.btn2 {
+    cursor: pointer;
+    height: 5vw;
+    width: 500px;
+    margin: 1vw;
+    display: inline-block;
+    font-family: 'Fredoka One', cursive;
+    font-size: 3vw;
+    padding-left: 7vw; padding-top: 1.5vw;
+    color: white;
+
+    background-color: mediumaquamarine;
+    border-radius: 50vw;
 }
 
 .long {
