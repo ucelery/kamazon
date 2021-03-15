@@ -20,6 +20,8 @@ body {
     position: relative;
 }
 
+/* NAVBAR
+========================== */
 .fixed-gradient {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.0));
     height: 4vw;
@@ -29,9 +31,6 @@ body {
     z-index: 99999;
 }
 
-
-/* NAVBAR
-========================== */
 .nav-bar {
     height: 3.5vw;
     width: 100%;
@@ -89,6 +88,8 @@ body {
     justify-content: center;
 }
 
+/* VIDEO BANNER
+=============================== */
 .vid-filter {
     position: absolute;
     height: 100%;
@@ -153,7 +154,7 @@ body {
 }
 
 .knight-princess {
-    background-image: url("../images/img_intro.png");
+    background-image: url("https://media.discordapp.net/attachments/820865524229210122/820958915558244362/img_intro.png?width=1440&height=189");
     background-size: contain;
     background-position-x: center;
     background-repeat: no-repeat;
@@ -196,33 +197,87 @@ body {
     width: 100vw;
     display: flex;
     margin-bottom: 100px;
+    margin-top: 100px;
+
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-shop img {
     position: absolute;
-    left: -3vw;
+    left: 0;
     transform: translateY(-5vw);
     width: 12vw;
     height: 10vw;
+    user-select: none;
+    cursor: initial;
+    pointer-events: none;
 }
 
 .btn2 {
     cursor: pointer;
     height: 5vw;
-    width: 500px;
     margin: 1vw;
+    width: 20vw;
     display: inline-block;
     font-family: 'Fredoka One', cursive;
     font-size: 3vw;
-    padding-left: 7vw; padding-top: 1.5vw;
     color: white;
 
     background-color: mediumaquamarine;
     border-radius: 50vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
 }
 
 .long {
     height: 1000px;
+}
+
+
+/* FOOTER
+========================= */
+.fade {
+    background-image: linear-gradient(to top, black, transparent);
+    height: 70px;
+    width: 100vw;
+}
+
+footer {
+    background-color: black;
+    height: 100px;
+    width: 100vw;
+    min-width: 1100px;
+}
+
+.companies {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+}
+
+.companies .kong-studios,
+.companies .kakao-games {
+    margin-right: 40px;
+    margin-top: 20px;
+}
+
+
+.disclaimer {
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    float: left;
+    margin-top: 40px;
+    margin-left: 30px;
 }
 
 /* SCROLL BAR */
@@ -242,3 +297,11 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #99a3ac;
 }
+
+@media only screen and (max-width: 600px) {
+    .buttons-wrapper {
+        display: inline-block;
+        margin: 5vw;
+        padding-right: 3vw;
+    }
+  }
