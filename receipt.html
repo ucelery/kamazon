@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <!-- RECEIPT STYLES -->
+    <link rel="stylesheet" href="../styles/receipt.css">
+
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
@@ -9,20 +11,22 @@
         href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Press+Start+2P&family=Russo+One&family=Secular+One&display=swap"
         rel="stylesheet">
 
-    <!-- STYLES -->
-    <link rel="stylesheet" href="../styles/support.css">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support!</title>
-</head>
+    <title>Ty for your purchase</title>
 
+    <!-- ICON -->
+    <link rel="shortcut icon" type="image/x-icon" href="../fknight-emote.ico" />
+</head>
 <body>
+    <div class="fixed-gradient">
+        <!-- LEAVE EMPTY -->
+    </div>
     <div class="wrapper">
-        <div class="fixed-gradient">
-            <!-- LEAVE EMPTY -->
-        </div>
         <!-- NAV BAR -->
         <div class="nav-bar newNav" id="nav">
             <div class="title-container">
@@ -33,45 +37,45 @@
             </div>
         </div>
 
+        
+        <!-- BANNER -->
         <div class="video-banner">
-            <div class="vid-filter"></div>
-
-            <div class="credits">
-                <!-- TITLE BANNER -->
-                <div class="title-banner">
-                    SUPPORT THE CREATORS
+            <section class="banner">
+                <!-- VIDEO FILTER -->
+                <div class="vid-filter"></div>
+                <div class="character-container">
+                    <!-- CHARACTER IMAGE -->
+                    <div class="character"></div>
                 </div>
-            
-                <!-- COMPANIES -->
-                <div class="companies2">
-                    <a href="https://kongstudios.net/us.html#explict" target="_blank">
-                        <div class="kong-studios">
-                            <img src="https://akamai-webcdn.kgstatic.net/gt/images/pc/logo_kong.png" alt="">
-                        </div>
-                    </a>
-                    <a href="https://www.kakaogamescorp.com" target="_blank">
-                        <div class="kakao-games">
-                            <img src="https://akamai-webcdn.kgstatic.net/gt/images/pc/logo_kakaogames.png" alt="">
-                        </div>
-                    </a>
-                </div>                
+            </section>
+
+            <div class="knight-princess"></div>
+            <div class="social-links">
+                <a href="#" class="btn soc-btn fa fa-twitter"></a>
+                <a href="#" class="btn soc-btn fa fa-facebook"></a>
+                <a href="#" class="btn soc-btn fa fa-reddit"></a>
             </div>
-        
-            <video autoplay muted loop>
-                <source src="https://cdn.discordapp.com/attachments/742369003002921031/820853419698814991/WebsiteBackground.mp4"
-                    type="video/mp4">
-            </video>
-        
-        
+            <!-- VIDEO -->
+            <div class="video-foreground" style="height: 100%;">
+                <video autoplay muted loop>
+                    <source src="https://cdn.discordapp.com/attachments/820865524229210122/821016253878894643/WebsiteBackground.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </div>
 
-        
-
-        <!-- CHARACTERS ART -->
-        <div class="bg-banner">
-            <div class="characters-banner"></div>
+        <!-- RECEIPT -->
+        <div class="receipt-wrapper">
+            <div class="r-header">
+                THANK YOU FOR YOUR PURCHASE!
+            </div>
+            <div class="bill">
+                <table id="table">
+                    <!-- EMPTY -->
+                </table>
+            </div>
         </div>
-
+        
         <!-- FOOTER -->
         <div class="fade"></div>
         <footer>
@@ -91,5 +95,8 @@
         </footer>
     </div>
 </body>
+
+<!-- GENERATE FIELDS -->
+<script src="../js/generateBill.js"></script>
 
 </html>
