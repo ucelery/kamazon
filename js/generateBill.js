@@ -96,70 +96,36 @@ var models = [
     }
 ];
 
-const costumeSlides = document.getElementById('costume-slides');
-models.forEach((item, index) => {
-    let header = document.createElement('header');
-    header.classList.add('costume-header');
-    header.innerHTML = item.content;
-
-    // let costumeCover = document.createElement('div');
-    // costumeCover.classList.add('costume-cover');
-    // costumeContainer.style.backgroundImage = `url(${item.picture})`;
-
-    let costumeModel = document.createElement('div');
-    costumeModel.classList.add('costume-model');
-    costumeModel.style.backgroundImage = `url(${item.picture})`;
-
-    let footer = document.createElement('div');
-    footer.classList.add('costume-footer');
-
-    // let costumeBase = document.createElement('div');
-    // costumeBase.classList.add('costume-base');
-
-    let slide = document.createElement('div');
-    slide.setAttribute("onClick", `addToCartPopUp("${item.content}")`);
-    slide.classList.add('swiper-slide');
-
-    // CHANGE PRICE TOOLTIP PRICE
-    costumeModel.setAttribute("data-model-id", `${item.content}`)
-    costumeModel.addEventListener("mouseover", function() {
-        let tooltip = document.getElementById('price-tooltip');
-        tooltip.innerHTML = `<img src="https://media.discordapp.net/attachments/820865524229210122/820945515100766228/gem.png?width=180&height=184" alt=""> ${item.price}`;
-        tooltip.style.opacity = 1;
-    });
-
-    costumeModel.addEventListener("mouseout", function() {
-        let tooltip = document.getElementById('price-tooltip');
-        tooltip.style.opacity = 0;
-    });
-
-    slide.appendChild(header);
-    slide.appendChild(costumeModel);
-    // slide.appendChild(costumeCover);
-    // slide.appendChild(costumeBase);
-    costumeSlides.appendChild(slide);
-});
-
-let price_tooltip = document.getElementById('price-tooltip');
-// SHOW PRICE ON HOVER
-$(document).on("click mousemove mousedown", "body", function (event) {
-    if (event.pageX == null && event.clientX != null) {
-        eventDoc = (event.target && event.target.ownerDocument) || document;
-        doc = eventDoc.documentElement;
-        body = eventDoc.body;
-
-        event.pageX = event.clientX +
-          (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
-          (doc && doc.clientLeft || body && body.clientLeft || 0);
-        event.pageY = event.clientY +
-          (doc && doc.scrollTop  || body && body.scrollTop  || 0) -
-          (doc && doc.clientTop  || body && body.clientTop  || 0 );
-    }
-    let x = event.pageX;
-    let y = event.pageY;
+const results = document.getElementById('results');
+    var table = document.getElementById('table');
+    var total = 0;
+    new URLSearchParams(window.location.search).forEach((value, name) => {
+        var selectedItem = name.split("-").join(" ");
+        var target = models.find(item => item.content === selectedItem);
     
-    let newposX = x - price_tooltip.offsetWidth / 2;
-    let newposY = y - price_tooltip.offsetHeight - 20; 
-    $(".price-tooltip").css("transform","translate3d("+newposX+"px,"+newposY+"px,0px)");
-});
+        var td = document.createElement('td');
+        var td2 = document.createElement('td');
+        td.innerHTML = `${selectedItem}:`;
 
+        let price = parseInt(target.price);
+        let sum = value * price;
+        total = total + sum;
+        td2.innerHTML = sum;
+
+        var row = document.createElement('tr');
+        row.appendChild(td);
+        row.appendChild(td2);
+
+        table.appendChild(row);
+    })
+
+    let totalRow = document.createElement('tr');
+    let totalText = document.createElement('td');
+    totalText.innerText = "TOTAL:";
+
+    let totalValue = document.createElement('td');
+    totalValue.innerHTML = total;
+    
+    totalRow.appendChild(totalText);
+    totalRow.appendChild(totalValue);
+    table.appendChild(totalRow);

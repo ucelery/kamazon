@@ -96,70 +96,67 @@ var models = [
     }
 ];
 
-const costumeSlides = document.getElementById('costume-slides');
-models.forEach((item, index) => {
-    let header = document.createElement('header');
-    header.classList.add('costume-header');
-    header.innerHTML = item.content;
-
-    // let costumeCover = document.createElement('div');
-    // costumeCover.classList.add('costume-cover');
-    // costumeContainer.style.backgroundImage = `url(${item.picture})`;
-
-    let costumeModel = document.createElement('div');
-    costumeModel.classList.add('costume-model');
-    costumeModel.style.backgroundImage = `url(${item.picture})`;
-
-    let footer = document.createElement('div');
-    footer.classList.add('costume-footer');
-
-    // let costumeBase = document.createElement('div');
-    // costumeBase.classList.add('costume-base');
-
-    let slide = document.createElement('div');
-    slide.setAttribute("onClick", `addToCartPopUp("${item.content}")`);
-    slide.classList.add('swiper-slide');
-
-    // CHANGE PRICE TOOLTIP PRICE
-    costumeModel.setAttribute("data-model-id", `${item.content}`)
-    costumeModel.addEventListener("mouseover", function() {
-        let tooltip = document.getElementById('price-tooltip');
-        tooltip.innerHTML = `<img src="https://media.discordapp.net/attachments/820865524229210122/820945515100766228/gem.png?width=180&height=184" alt=""> ${item.price}`;
-        tooltip.style.opacity = 1;
-    });
-
-    costumeModel.addEventListener("mouseout", function() {
-        let tooltip = document.getElementById('price-tooltip');
-        tooltip.style.opacity = 0;
-    });
-
-    slide.appendChild(header);
-    slide.appendChild(costumeModel);
-    // slide.appendChild(costumeCover);
-    // slide.appendChild(costumeBase);
-    costumeSlides.appendChild(slide);
-});
-
-let price_tooltip = document.getElementById('price-tooltip');
-// SHOW PRICE ON HOVER
-$(document).on("click mousemove mousedown", "body", function (event) {
-    if (event.pageX == null && event.clientX != null) {
-        eventDoc = (event.target && event.target.ownerDocument) || document;
-        doc = eventDoc.documentElement;
-        body = eventDoc.body;
-
-        event.pageX = event.clientX +
-          (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
-          (doc && doc.clientLeft || body && body.clientLeft || 0);
-        event.pageY = event.clientY +
-          (doc && doc.scrollTop  || body && body.scrollTop  || 0) -
-          (doc && doc.clientTop  || body && body.clientTop  || 0 );
+let cartmodal = document.getElementById('cart-container');
+var modal = document.getElementById('modal');
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.classList.add('hide');
     }
-    let x = event.pageX;
-    let y = event.pageY;
-    
-    let newposX = x - price_tooltip.offsetWidth / 2;
-    let newposY = y - price_tooltip.offsetHeight - 20; 
-    $(".price-tooltip").css("transform","translate3d("+newposX+"px,"+newposY+"px,0px)");
-});
+    if (event.target === cartmodal) {
+        cartmodal.classList.add('hide');
+        
+    }
+}
 
+var addToCartPopUp = (selected) => {
+    let header = document.getElementById('header');
+    header.innerText = `Add '${selected}' to cart?`;
+    
+    modal.classList.remove("hide");
+}
+
+var addToCart = () => {
+    let header = document.getElementById('header');
+    let start = header.textContent.indexOf("'");
+    let end = header.textContent.lastIndexOf("'");
+    var selected;
+
+    for (let index = start+1; index < end; index++) {
+        selected += header.textContent[index];
+    }
+
+    // close modal
+    modal.classList.remove("hide");
+
+    // remove random undefined
+    let findItem = models.find(item => item.content === selected.slice(9));
+    let numForm = document.createElement('input')
+    numForm.classList.add('numform');
+    numForm.setAttribute("type", "number");
+
+    let string = findItem.content.split(' ').join('-');
+    numForm.setAttribute("name", string);
+    numForm.setAttribute("value", 1);
+
+    let list_container = document.createElement('div');
+    list_container.classList.add('cart-item');
+
+    let textItem = document.createElement('div');
+    textItem.classList.add('cart-text-item');
+    textItem.textContent = findItem.content;
+    list_container.appendChild(textItem);
+    list_container.appendChild(numForm);
+
+    let cartList = document.getElementById('cart-list');
+    cartList.appendChild(list_container);
+
+    modal.classList.add("hide");
+}
+
+var cancelModal = () => {
+    modal.classList.add('hide');
+}
+
+var log = (log) => {
+    console.log(log);
+}
