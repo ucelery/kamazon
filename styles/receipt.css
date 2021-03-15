@@ -1,0 +1,233 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    height: 100vh;
+}
+
+/* NAVBAR
+========================== */
+.fixed-gradient {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.0));
+    height: 4vw;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 99999;
+}
+
+.nav-bar {
+    height: 3.5vw;
+    width: 100%;
+    position: absolute;
+    top: 5vw;
+    z-index: 99999;
+    background-color: rgba(56, 63, 69, 0.0);
+    transition: 0.3s;
+}
+
+.newTitle {
+    font-size: 50px !important;
+    z-index: 999999 !important;
+}
+
+.newUnder {
+    height: 4px !important;
+    width: 100px !important;
+}
+
+.newNav {
+    position: fixed !important;
+    top: 0 !important;
+}
+
+.greetings {
+    position: absolute;
+    top: 2vw;
+    width: 100%;
+    z-index: 999;
+    color: whitesmoke;
+    font-family: 'Fredoka One', cursive;
+    font-size: 3vw;
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    font-family: 'Fredoka One', cursive;
+    color: whitesmoke;
+    align-self: center;
+    font-size: 6vw;
+    transition: 0.1s;
+    user-select: none;
+    cursor: pointer;
+}
+
+.title-underline {
+    position: absolute;
+    background-color: #e99b2d;
+    height: 0.35vw;
+    width: 15vw;
+    align-self: flex-end;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* VIDEO BANNER
+=============================== */
+.vid-filter {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.video-banner {
+    position: relative;
+    height: 250px;
+    min-height: 150px;
+    overflow: hidden;
+    box-shadow: black;
+    box-shadow: 5px 5px 20px 5px #aaaaaa;
+    margin-bottom: 50px;
+}
+
+.video-foreground video {
+    pointer-events: none;
+    height: 460px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.social-links {
+    position: absolute;
+    bottom: 0.4vw;
+    left: 0.5vw;
+    z-index: 999;
+}
+
+.fa.soc-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    height: 2.4vw;
+    width: 2.4vw;
+    min-height: 15px;
+    min-width: 15px;
+
+    font-size: 1vw;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-reddit {
+    background: #ff5700;
+    color: white;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.knight-princess {
+    background-image: url("../images/img_intro.png");
+    background-size: contain;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 9vw;
+    align-self: flex-end;
+    position: absolute;
+    bottom: 0;
+}
+
+.character {
+    background-image: url("");
+}
+
+/* RECEIPT
+=========================== */
+.receipt-wrapper {
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+    font-size: 50px;    
+    color: black;   
+}
+
+.receipt-wrapper .r-header {
+    width: 100%;
+}
+
+.bill {
+    padding: 30px 10vw;
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+table, td, th {
+    border: 1px solid black;
+    border-spacing: 0;
+}
+
+
+/* FOOTER
+========================= */
+.fade {
+    position: absolute;
+    bottom: 100px;
+    background-image: linear-gradient(to top, black, transparent);
+    height: 70px;
+    width: 100vw;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    background-color: black;
+    height: 100px;
+    width: 100vw;
+    min-width: 1100px;
+}
+
+.companies {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+}
+
+.companies .kong-studios,
+.companies .kakao-games {
+    margin-right: 40px;
+    margin-top: 20px;
+}
+
+
+.disclaimer {
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    float: left;
+    margin-top: 40px;
+    margin-left: 30px;
+}
