@@ -1,0 +1,209 @@
+html {
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* VIDEO BANNER
+========================= */
+
+.video-banner {
+    height: 400px;
+    box-shadow: black;
+    box-shadow: 5px 5px 20px 5px #aaaaaa;
+    overflow: hidden;
+    position: relative;
+}
+
+.video-banner video {
+    pointer-events: none;
+    height: 300px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vid-filter {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* TITLE BANNER
+========================= */
+
+.bg-banner {
+    background-image: url('https://media.discordapp.net/attachments/820865524229210122/820960543338004480/bg_character.png?width=1440&height=607');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 650px;
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+.characters-banner {
+    background-image: url('https://media.discordapp.net/attachments/820865524229210122/820960688382017536/characters-banner.png?width=1440&height=595');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 65%;
+    height: 65%;
+    margin: auto;
+}
+
+.title-banner {
+    font-family: 'Fredoka One', cursive;
+    font-size: 3rem;
+    margin-top: 150px;
+    text-align: center;
+    color: whitesmoke
+}
+
+.credits {
+    width: 100vw;
+    position: absolute;
+}
+
+/* NAVBAR
+========================== */
+
+.nav-bar {
+    height: 3.5vw;
+    width: 100%;
+    position: absolute;
+    top: 5vw;
+    z-index: 99999;
+    background-color: rgba(56, 63, 69, 0.0);
+    transition: 0.3s;
+}
+
+.newTitle {
+    font-size: 2.5rem !important;
+}
+
+.newUnder {
+    height: 0.2vw !important;
+    width: 7.5vw !important;
+}
+
+.newNav {
+    position: fixed !important;
+    top: 0 !important;
+}
+
+.greetings {
+    position: absolute;
+    top: 2vw;
+    width: 100%;
+    z-index: 999;
+    color: whitesmoke;
+    font-family: 'Fredoka One', cursive;
+    font-size: 3vw;
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    font-family: 'Fredoka One', cursive;
+    color: whitesmoke;
+    align-self: center;
+    transition: 0.1s;
+}
+
+.title-underline {
+    position: absolute;
+    background-color: #e99b2d;
+    height: 0.35vw;
+    width: 15vw;
+    align-self: flex-end;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+}
+
+.fixed-gradient {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.0));
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 99999;
+}
+
+.companies2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.companies2 div {
+    margin: 30px;
+    cursor: pointer;
+    
+}
+
+/* FOOTER
+========================= */
+.fade {
+    background-image: linear-gradient(to top, black, transparent);
+    height: 70px;
+    width: 100vw;
+}
+
+footer {
+    background-color: black;
+    height: 100px;
+    width: 100vw;
+    min-width: 1100px;
+}
+
+.companies {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+}
+
+.companies .kong-studios,
+.companies .kakao-games {
+    margin-right: 40px;
+    margin-top: 20px;
+}
+
+
+.disclaimer {
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    float: left;
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+
+/* SCROLL BAR */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #383f45;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #bbc6ce;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #99a3ac;
+}
